@@ -356,5 +356,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8387379131118988225, guid: f7c0568a967299b4aa74ed85fc14d972, type: 3}
+      propertyPath: m_SceneToLoadAfterAppConfig
+      value: LobbyScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7c0568a967299b4aa74ed85fc14d972, type: 3}

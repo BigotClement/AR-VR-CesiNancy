@@ -30,7 +30,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         if (string.IsNullOrEmpty(m_NameInputField.text))
         {
-            Debug.Log("test");
             m_NameInputFieldPlaceholder.text = "Name Empty !!";
             return;
         }

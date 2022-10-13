@@ -195,7 +195,6 @@ GameObject:
   - component: {fileID: 6560632078799775003}
   - component: {fileID: 6528265033444554053}
   - component: {fileID: 6528265033569721833}
-  - component: {fileID: 1622636036776514822}
   m_Layer: 26
   m_Name: LeftHand
   m_TagString: Untagged
@@ -266,7 +265,7 @@ MonoBehaviour:
   noSteamVRFallbackCamera: {fileID: 0}
   noSteamVRFallbackMaxDistanceNoItem: 10
   noSteamVRFallbackMaxDistanceWithItem: 0.5
-  renderModelPrefab: {fileID: 1000011547835092, guid: d8d1e5711b2c77d48ac96e769aaff27a, type: 3}
+  renderModelPrefab: {fileID: 1000011547835092, guid: 534d2fcf558316441a41841275676807, type: 3}
   renderModels: []
   mainRenderModel: {fileID: 0}
   hoverhighlightRenderModel: {fileID: 0}
@@ -324,22 +323,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
---- !u!114 &1622636036776514822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560632078789517749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &6560632078789534087
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +335,6 @@ GameObject:
   - component: {fileID: 6560632078799988101}
   - component: {fileID: 6528265032794728647}
   - component: {fileID: 6528265054045842895}
-  - component: {fileID: 7551407241010537439}
   m_Layer: 26
   m_Name: RightHand
   m_TagString: Untagged
@@ -423,7 +405,7 @@ MonoBehaviour:
   noSteamVRFallbackCamera: {fileID: 0}
   noSteamVRFallbackMaxDistanceNoItem: 10
   noSteamVRFallbackMaxDistanceWithItem: 0.5
-  renderModelPrefab: {fileID: 1000012617731570, guid: b3cb7e5f55e66cb40aea59db72c62365, type: 3}
+  renderModelPrefab: {fileID: 1000012617731570, guid: 4c5fea2300124fe49a30168e29627064, type: 3}
   renderModels: []
   mainRenderModel: {fileID: 0}
   hoverhighlightRenderModel: {fileID: 0}
@@ -481,22 +463,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   hand: {fileID: 0}
---- !u!114 &7551407241010537439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560632078789534087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &6560632078789542343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,10 +1153,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6560632078789822209}
   - component: {fileID: 6560632078799791629}
-  - component: {fileID: 4890252052883806077}
-  - component: {fileID: 3576148787651221051}
   m_Layer: 0
-  m_Name: Virus
+  m_Name: VirusCameraRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1252,47 +1216,6 @@ MonoBehaviour:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 1
   allowToggleTo2D: 1
---- !u!114 &4890252052883806077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560632078789752697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1622636036776514822}
-  - {fileID: 7551407241010537439}
-  - {fileID: 6493556978896287242}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &3576148787651221051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560632078789752697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbd41f5c3024004fa970bc204956188, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SteamVRLeft: {fileID: 6560632078789517749}
-  SteamVRRight: {fileID: 6560632078789534087}
-  SteamVRCamera: {fileID: 6560632078789770975}
-  teleportingPrefab: {fileID: 153878, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 3}
 --- !u!1 &6560632078789753009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1419,6 @@ GameObject:
   - component: {fileID: 6560632078790339611}
   - component: {fileID: 6560632078799776333}
   - component: {fileID: 6560632078801027279}
-  - component: {fileID: 6493556978896287242}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -1582,22 +1504,6 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6560632078789770975}
   m_Enabled: 1
---- !u!114 &6493556978896287242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6560632078789770975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &6561605689357967897
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ TagManager:
   - FxTemporaire
   - CinemachineTarget
   - Floor
+  - LeftHand
+  - RightHand
+  - VRCamera
   layers:
   - Default
   - TransparentFX

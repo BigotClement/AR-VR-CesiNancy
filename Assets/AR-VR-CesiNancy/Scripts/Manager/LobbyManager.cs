@@ -50,6 +50,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
+        Debug.Log("Try to connect to server...");
         if (isConnecting)
         {
             PhotonNetwork.JoinRandomRoom();
@@ -64,11 +65,16 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = m_MaxPlayerPerRoom });
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = m_MaxPlayerPerRoom;
+        roomOptions.IsVisible = true;
+        roomOptions.IsOpen = true;
+        PhotonNetwork.CreateRoom("Room 1", roomOptions, TypedLobby.Default);
     }
 
     public override void OnJoinedRoom()
     {
+        Debug.Log("Player join the room");
         if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
         {
             PhotonNetwork.LoadLevel("DevScene");

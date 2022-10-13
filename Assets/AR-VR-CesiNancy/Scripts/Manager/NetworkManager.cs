@@ -13,8 +13,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject playerPrefabVR;
 
     [SerializeField] private GameObject m_TPSCameraRig;
-
-    [SerializeField] private GameObject m_VirusCamerRig;
+    [SerializeField] private GameObject m_VirusCameraRig;
 
     public override void OnLeftRoom()
     {
@@ -34,8 +33,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
         if (playerPrefab != null && UserManager.UserMeInstance == null)
         {
-            if (photonView.IsMine)
-                ActiveCameraRig();
+            ActiveCameraRig();
 
             Vector3 initialPos = UserDeviceManager.GetDeviceUsed() == UserDeviceType.HTC ? new Vector3(0f, 0f, 0f) : new Vector3(0f, 5f, 0f);
             PhotonNetwork.Instantiate("Prefabs/" + playerPrefab.name, initialPos, Quaternion.identity, 0);
@@ -49,11 +47,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if (deviceUsed == "htc" && UnityEngine.XR.XRSettings.isDeviceActive || deviceUsed == "auto" && UnityEngine.XR.XRSettings.isDeviceActive)
         {
             m_TPSCameraRig.SetActive(false);
-            m_VirusCamerRig.SetActive(false);
+            m_VirusCameraRig.SetActive(true);
         } else
         {
             m_TPSCameraRig.SetActive(true);
-            m_VirusCamerRig.SetActive(true);
+            m_VirusCameraRig.SetActive(false);
         }
     }
 }

@@ -105,6 +105,7 @@ namespace Valve.VR
             }
         }
         
+<<<<<<< HEAD
         public virtual SteamVR_Action_Boolean ShootRight
         {
             get
@@ -113,6 +114,8 @@ namespace Valve.VR
             }
         }
         
+=======
+>>>>>>> main
         public virtual SteamVR_Action_Vibration Haptic
         {
             get

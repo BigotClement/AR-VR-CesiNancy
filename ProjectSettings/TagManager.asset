@@ -4,11 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - Gun
   - PlayerVR
   - PlayerKMS
   - PlayerVR_bullet
   - PlayerKMS_bullet
+=======
+  - projectile
+  - FxTemporaire
+  - CinemachineTarget
+  - Floor
+  - LeftHand
+  - RightHand
+  - VRCamera
+  - VirusCameraRig
+>>>>>>> main
   layers:
   - Default
   - TransparentFX

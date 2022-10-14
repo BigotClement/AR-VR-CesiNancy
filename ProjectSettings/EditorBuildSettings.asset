@@ -4,8 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes: []
   m_configObjects:
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: e5d9e4bded306494b8013d1de9b57c9f, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 02d4c9e905634174a92dc07660f67941, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d4bb7c72c4f0ce845afcbbba29137a9c, type: 2}
+=======
+  m_Scenes:
+  - enabled: 1
+    path: Assets/AR-VR-CesiNancy/Scenes/AppConfigLoaderScene.unity
+    guid: 7a5ae1b8ff4316f4a8eca14a77dd1d02
+  - enabled: 1
+    path: Assets/AR-VR-CesiNancy/Scenes/LobbyScene.unity
+    guid: ebdc7beb84e1ae244a76f93d4139b1b1
+  - enabled: 1
+    path: Assets/AR-VR-CesiNancy/Scenes/DevScene.unity
+    guid: 85ee1a4e71eb5da45b0dc680a9697c40
+  m_configObjects:
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 2ccff0d34b32e764fb78b063e50a7f68, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fa1c94389c50c694ca89af36af98af84, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b6238d7a1283e374ab6337f55d35a40c, type: 2}
+>>>>>>> main

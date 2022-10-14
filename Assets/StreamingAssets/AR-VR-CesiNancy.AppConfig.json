@@ -1,3 +1,21 @@
 {
-    "DeviceUsed": "AUTO"
+    "DeviceUsed": "AUTO",
+    "LifeNumber": 3,
+    "DelayShoot": 3.5,
+    "DelayTeleport": 5.0,
+    "ColorShotVirus":  [
+        1.0,
+        0.6,
+        0.2,
+        1.0  
+    ],
+    "ColorShotKMS":  [
+        1.0,
+        0.6,
+        0.2,
+        1.0
+    ],
+    "NbContaminatedPlayerToVictory": 10,
+    "RadiusExplosion": 2.0,
+    "TimeToAreaContamination": 5.0
 }

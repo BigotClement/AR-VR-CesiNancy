@@ -2,6 +2,7 @@
   "source": "Unity",
   "applications": [
     {
+<<<<<<< HEAD
       "app_key": "application.generated.unity.temp.exe",
       "launch_type": "url",
       "url": "steam://launch/",
@@ -9,6 +10,15 @@
       "strings": {
         "en_us": {
           "name": "temp [Testing]"
+=======
+      "app_key": "application.generated.unity.arvrcesinancy.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\clemc\\Documents\\Cesi\\A5\\RA - RV\\Projet\\AR-VR-CesiNancy\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "AR-VR-CesiNancy [Testing]"
+>>>>>>> main
         }
       }
     }

@@ -10,15 +10,17 @@ public class NetworkVirus : MonoBehaviourPunCallbacks
     [SerializeField] private Transform m_LeftHand;
     [SerializeField] private Transform m_RightHand;
 
-    private GameObject PlayerHead;
-    private GameObject PlayerLeftHand;
-    private GameObject PlayerRightHand;
+    private Transform PlayerHead;
+    private Transform PlayerLeftHand;
+    private Transform PlayerRightHand;
 
     private void Start()
     {
-        PlayerHead = GameObject.FindGameObjectWithTag("MainCamera");
-        PlayerLeftHand = GameObject.FindGameObjectWithTag("LeftHand");
-        PlayerRightHand = GameObject.FindGameObjectWithTag("RightHand");
+        GameObject VirusCameraRig = GameObject.FindGameObjectWithTag("VirusCameraRig");
+
+        PlayerHead = VirusCameraRig.transform.Find("VRCamera");
+        PlayerLeftHand = VirusCameraRig.transform.Find("LeftHand");
+        PlayerRightHand = VirusCameraRig.transform.Find("RightHand");
         Debug.Log(PlayerHead);
         Debug.Log(PlayerLeftHand);
         Debug.Log(PlayerRightHand);
@@ -33,18 +35,15 @@ public class NetworkVirus : MonoBehaviourPunCallbacks
             m_LeftHand.gameObject.SetActive(false);
             m_RightHand.gameObject.SetActive(false);
 
-            /*InputDevices.GetDeviceAtXRNode(XRNode.Head).TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 position);
-            Debug.Log(position);*/
-
             SyncVirusPlayer(m_Head, PlayerHead);
             SyncVirusPlayer(m_LeftHand, PlayerLeftHand);
             SyncVirusPlayer(m_RightHand, PlayerRightHand);
         }
     }
 
-    private void SyncVirusPlayer(Transform target, GameObject playerDevice)
+    private void SyncVirusPlayer(Transform target, Transform playerDevice)
     {
-        target.position = playerDevice.transform.position;
-        target.rotation = playerDevice.transform.rotation;
+        target.position = playerDevice.position;
+        target.rotation = playerDevice.rotation;
     }
 }

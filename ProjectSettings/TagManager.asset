@@ -11,6 +11,7 @@ TagManager:
   - LeftHand
   - RightHand
   - VRCamera
+  - VirusCameraRig
   layers:
   - Default
   - TransparentFX

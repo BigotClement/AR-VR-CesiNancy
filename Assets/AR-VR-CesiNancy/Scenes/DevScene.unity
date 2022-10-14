@@ -421,6 +421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: VirusCameraRig
       objectReference: {fileID: 0}
+    - target: {fileID: 6560632078789752697, guid: e3601914e9676d94cae3a65b5d5a32a1, type: 3}
+      propertyPath: m_TagString
+      value: VirusCameraRig
+      objectReference: {fileID: 0}
     - target: {fileID: 6560632078789822209, guid: e3601914e9676d94cae3a65b5d5a32a1, type: 3}
       propertyPath: m_RootOrder
       value: 4

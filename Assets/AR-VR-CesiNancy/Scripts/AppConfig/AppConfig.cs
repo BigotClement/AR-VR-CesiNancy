@@ -6,6 +6,15 @@ using UnityEngine;
 public class AppConfig
 {
     public string DeviceUsed = "AUTO";
+    public int LifeNumber;
+    public float DelayShoot;
+    public float DelayTeleport;
+    public List<float> ColorShotVirus;
+    public List<float> ColorShotKMS;
+    public int NbContaminatedPlayerToVictory;
+    public float RadiusExplosion;
+    public float TimeToAreaContamination;
+
     private static AppConfig inst;
     public static AppConfig Inst
     {

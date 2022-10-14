@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/AR-VR-CesiNancy/Scenes/AppConfigLoaderScene.unity
     guid: 7a5ae1b8ff4316f4a8eca14a77dd1d02
   - enabled: 1
-    path: Assets/AR-VR-CesiNancy/Scenes/LobbyScene.unity
+    path: Assets/AR-VR-CesiNancy/Scenes/ConnectToServerScene.unity
+    guid: 1b7188e15ed9c1643a0a16c82638c1ea
+  - enabled: 1
+    path: Assets/AR-VR-CesiNancy/Scenes/LobbyPCScene.unity
     guid: ebdc7beb84e1ae244a76f93d4139b1b1
+  - enabled: 1
+    path: Assets/AR-VR-CesiNancy/Scenes/LobbyVRScene.unity
+    guid: 8ae1541052c1a124686f3570ee55cefb
   - enabled: 1
     path: Assets/AR-VR-CesiNancy/Scenes/DevScene.unity
     guid: 85ee1a4e71eb5da45b0dc680a9697c40

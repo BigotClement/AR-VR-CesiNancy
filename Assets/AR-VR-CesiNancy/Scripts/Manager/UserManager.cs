@@ -29,10 +29,7 @@ public class UserManager : MonoBehaviourPunCallbacks
         if (!photonView.IsMine) return;
         try
         {
-            Debug.Log("Find Virtual Camera");
-            
             playerFollowVirtualCamera = GameObject.Find("PlayerFollowVirtualCamera");
-            Debug.Log(playerFollowVirtualCamera);
         }
         catch (System.Exception ex)
         {
@@ -42,9 +39,6 @@ public class UserManager : MonoBehaviourPunCallbacks
 
     private void followLocalPlayer()
     {
-        Debug.Log(photonView.IsMine);
-        Debug.Log(playerFollowVirtualCamera);
-
         if (photonView.IsMine && playerFollowVirtualCamera != null)
         {
             playerFollowVirtualCamera.GetComponent<CinemachineVirtualCamera>().Follow = m_PlayerCameraRoot;

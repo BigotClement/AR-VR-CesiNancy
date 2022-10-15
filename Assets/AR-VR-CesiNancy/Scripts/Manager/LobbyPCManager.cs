@@ -34,6 +34,10 @@ public class LobbyPCManager : MonoBehaviourPunCallbacks
             PhotonNetwork.CreateRoom(m_CreateRoomInput.text, roomOptions, TypedLobby.Default);
         }
     }
+    public override void OnJoinedLobby()
+    {
+        roomItemsList.Clear();
+    }
 
     public override void OnJoinedRoom()
     {
@@ -45,20 +49,44 @@ public class LobbyPCManager : MonoBehaviourPunCallbacks
         UpdateRoomList(roomList);
     }
 
+    public override void OnLeftLobby()
+    {
+        roomItemsList.Clear();
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        roomItemsList.Clear();
+    }
+
     private void UpdateRoomList(List<RoomInfo> list)
     {
-        foreach (RoomItem item in roomItemsList)
+        /*foreach (RoomItem item in roomItemsList)
         {
             Destroy(item.gameObject);
-        }
-        roomItemsList.Clear();
+        }*/
+        //roomItemsList.Clear();
 
         foreach (RoomInfo info in list)
         {
-            RoomItem newRoom = Instantiate(roomItemPrefab, m_ContentObject);
-            newRoom.SetRoomInfo(info);
-            roomItemsList.Add(newRoom);
-            
+            if (info.RemovedFromList)
+            {
+                foreach (RoomItem item in roomItemsList)
+                {
+                    if (item.m_RoomName.text == info.Name)
+                    {
+                        roomItemsList.Remove(item);
+                        Destroy(item.gameObject);
+                        break;
+                    }
+                } 
+            }
+            else
+            {
+                RoomItem newRoom = Instantiate(roomItemPrefab, m_ContentObject);
+                newRoom.SetRoomInfo(info);
+                roomItemsList.Add(newRoom);
+            }
         }
     }
 

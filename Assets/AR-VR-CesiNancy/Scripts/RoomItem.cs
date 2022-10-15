@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class RoomItem : MonoBehaviour
 {
-    [SerializeField] private TMP_Text m_RoomName;
+    [SerializeField] public TMP_Text m_RoomName;
     [SerializeField] private TMP_Text m_PlayerCount;
 
     LobbyPCManager lobby;

@@ -9,11 +9,11 @@ public class RoomItem : MonoBehaviour
     [SerializeField] public TMP_Text m_RoomName;
     [SerializeField] private TMP_Text m_PlayerCount;
 
-    LobbyPCManager lobby;
+    LobbyManager lobby;
 
     private void Start()
     {
-        lobby = FindObjectOfType<LobbyPCManager>();
+        lobby = FindObjectOfType<LobbyManager>();
     }
 
     public void SetRoomInfo(RoomInfo info)

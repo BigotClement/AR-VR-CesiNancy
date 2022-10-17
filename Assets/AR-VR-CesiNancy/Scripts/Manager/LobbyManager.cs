@@ -1,83 +1,91 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private TMP_InputField m_CreateRoomInput;
     [SerializeField] private byte m_MaxPlayerPerRoom = 4;
-    [SerializeField] private TMPro.TMP_InputField m_NameInputField;
-    [SerializeField] private TMPro.TMP_Text m_NameInputFieldPlaceholder;
-    [SerializeField] private GameObject m_UI;
-    [SerializeField] private GameObject m_ProgressLabel;
 
-    private bool isConnecting;
+    [SerializeField] private RoomItem roomItemPrefab;
+    [SerializeField] private Transform m_ContentObject;
 
-    private void Awake()
+    private List<RoomItem> roomItemsList = new List<RoomItem>();
+
+    // Start is called before the first frame update
+    void Start()
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
+        PhotonNetwork.JoinLobby();
     }
 
-    private void Start()
+    public void CreateRoom()
     {
-        m_ProgressLabel.SetActive(false);
-        m_UI.SetActive(true);
-    }
-
-    public void Connect()
-    {
-        if (string.IsNullOrEmpty(m_NameInputField.text))
+        if (!string.IsNullOrEmpty(m_CreateRoomInput.text))
         {
-            m_NameInputFieldPlaceholder.text = "Name Empty !!";
-            return;
-        }
-        m_ProgressLabel.SetActive(true);
-        m_UI.SetActive(false);
-        isConnecting = true;
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.MaxPlayers = m_MaxPlayerPerRoom;
+            roomOptions.IsVisible = true;
+            roomOptions.IsOpen = true;
 
-        PhotonNetwork.NickName = m_NameInputField.text;
-
-        if (PhotonNetwork.IsConnected)
-        {
-            PhotonNetwork.JoinRandomRoom();
-        } else
-        {
-            PhotonNetwork.ConnectUsingSettings();
+            PhotonNetwork.CreateRoom(m_CreateRoomInput.text, roomOptions, TypedLobby.Default);
         }
     }
-
-    public override void OnConnectedToMaster()
+    public override void OnJoinedLobby()
     {
-        Debug.Log("Try to connect to server...");
-        if (isConnecting)
-        {
-            PhotonNetwork.JoinRandomRoom();
-        }
-    }
-
-    public override void OnDisconnected(DisconnectCause cause)
-    {
-        m_ProgressLabel.SetActive(false);
-        m_UI.SetActive(true);
-    }
-
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = m_MaxPlayerPerRoom;
-        roomOptions.IsVisible = true;
-        roomOptions.IsOpen = true;
-        PhotonNetwork.CreateRoom("Room 1", roomOptions, TypedLobby.Default);
+        roomItemsList.Clear();
     }
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("Player join the room");
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 1)
+        PhotonNetwork.LoadLevel("DevScene");
+    }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        UpdateRoomList(roomList);
+    }
+
+    public override void OnLeftLobby()
+    {
+        roomItemsList.Clear();
+    }
+
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        roomItemsList.Clear();
+    }
+
+    private void UpdateRoomList(List<RoomInfo> list)
+    {
+        foreach (RoomInfo info in list)
         {
-            PhotonNetwork.LoadLevel("DevScene");
+            if (info.RemovedFromList)
+            {
+                foreach (RoomItem item in roomItemsList)
+                {
+                    if (item.m_RoomName.text == info.Name)
+                    {
+                        roomItemsList.Remove(item);
+                        Destroy(item.gameObject);
+                        break;
+                    }
+                } 
+            }
+            else
+            {
+                RoomItem newRoom = Instantiate(roomItemPrefab, m_ContentObject);
+                newRoom.SetRoomInfo(info);
+                roomItemsList.Add(newRoom);
+            }
         }
+    }
+
+    public void JoinRoom(string roomName)
+    {
+        PhotonNetwork.JoinRoom(roomName);
     }
 }

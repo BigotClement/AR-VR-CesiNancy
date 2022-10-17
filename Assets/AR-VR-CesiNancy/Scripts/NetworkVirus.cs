@@ -21,9 +21,6 @@ public class NetworkVirus : MonoBehaviourPunCallbacks
         PlayerHead = VirusCameraRig.transform.Find("VRCamera");
         PlayerLeftHand = VirusCameraRig.transform.Find("LeftHand");
         PlayerRightHand = VirusCameraRig.transform.Find("RightHand");
-        Debug.Log(PlayerHead);
-        Debug.Log(PlayerLeftHand);
-        Debug.Log(PlayerRightHand);
     }
 
     // Update is called once per frame

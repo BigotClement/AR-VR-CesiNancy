@@ -12,6 +12,8 @@ TagManager:
   - RightHand
   - VRCamera
   - VirusCameraRig
+  - Health
+  - PlayerVR_bullet
   layers:
   - Default
   - TransparentFX
